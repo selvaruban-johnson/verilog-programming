@@ -1,0 +1,20 @@
+module two_bit_comparator_str(output l,e,g,input a1,a0,b1,b0);
+	wire [14:1]w;
+	not n1 (w[11],a1);
+	not n2 (w[12],a0);
+	not n3 (w[13],b1);
+	not n4 (w[14],b0);
+	and aa1 (w[1],w[11],b1);
+	and a2 (w[2],w[11],w[12],b0);
+	and a3 (w[3],w[12],b1,b0);
+	or o1 (l,w[1],w[2],w[3]);
+	and a4 (w[4],w[11],w[12],w[13],w[14]);
+	and a5 (w[5],w[11],a0,w[13],b0);
+	and a6 (w[6],a1,a0,b1,b0);
+	and a7 (w[7],a1,w[12],b1,w[14]);
+	or o2 (e,w[4],w[5],w[6],w[7]);
+	and a8 (w[8],a1,w[13]);
+	and a9 (w[9],a0,w[13],w[14]);
+	and a10 (w[10],a1,a0,w[14]);
+	or o3 (g,w[8],w[9],w[10]);
+endmodule
