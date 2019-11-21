@@ -1,4 +1,4 @@
-module srff_bm (input clk,s,r,rst,output reg q);
+module srff_bm_sync (input clk,s,r,rst,output reg q);
 	always @ (posedge clk)
 	begin
 		if(rst)
