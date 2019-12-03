@@ -43,10 +43,10 @@ module n_bit_universal #(parameter n=5)(output reg sout, [n-1:0]q,input clk,rst,
 			sipo :	q<={sin,q[n-1:1]} ;
 			pipo : q<=d;
 			piso : if(!load)
-				r<=d;
+				q<=d;
 				else
 				begin
-				r<={d[n-1],r[n-1:1]};
+				r<={d[n-1],q[n-1:1]};
 				sout<=r[0];
 				end			
 			endcase

@@ -1,5 +1,5 @@
 module jkff_bm (input clk,j,k,rst,output reg q);
-	always @ (posedge clk,posedge rst)
+	always @ (posedge clk)
 	begin
 		if(rst)
 			q<=1'b0;

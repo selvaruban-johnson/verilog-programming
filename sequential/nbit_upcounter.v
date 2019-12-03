@@ -1,4 +1,4 @@
-module nbit_upcounter #(parameter n=8)(output [n-1:0]q,input clk,rst);
+module nbit_upcounter #(parameter n=128)(output [n-1:0]q,input clk,rst);
 	genvar count;
 	generate 
 		for (count=0;count < n;count = count +1)
